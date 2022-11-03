@@ -17,7 +17,7 @@
     <select {{ $form ? 'form='.$form : '' }} name="{{ $name }}" id="{{ $name }}" {{ $required ? 'required' : '' }} class="option-search" style="width: 100%">
         <option value="" selected="selected">--- select option ---</option>
         @foreach($options as $key => $option)
-            <option @if(old($name) !== null && old($name) == $key) selected="selected" @elseif($key === $default) selected="selected" @else  @endif value="{{ $key }}">{{ $option }}</option>
+            <option @if(old($name) !== null && old($name) == $key) selected="selected" @elseif(old($name) === null && $key === $default) selected="selected" @else  @endif value="{{ $key }}">{{ $option }}</option>
         @endforeach
     </select>
 </div>
