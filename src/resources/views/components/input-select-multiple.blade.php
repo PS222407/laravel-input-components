@@ -16,7 +16,7 @@
     <label for="{{ $name }}">{{ $label }}{!! $required ? ' <span style="color: red">*</span>' : '' !!}</label>
     <select multiple {{ $form ? 'form='.$form : '' }} name="{{ $name }}[]" id="{{ $name }}" {{ $required ? 'required' : '' }} class="option-search" style="width: 100%">
         @foreach($options as $key => $option)
-            <option @if(old($name) !== null && in_array($key, old($name))) selected="selected" @elseif(old($name) === null && in_array($key, $default ?? [])) selected="selected" @else  @endif value="{{ $key }}">{{ $option }}</option>
+            <option @if(old($name) !== null && in_array($key, old($name))) selected="selected" @elseif(!old() && in_array($key, $default ?? [])) selected="selected" @else  @endif value="{{ $key }}">{{ $option }}</option>
         @endforeach
     </select>
 </div>

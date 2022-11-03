@@ -32,7 +32,7 @@
                         $isSelected = true;
                     } elseif (old($name) && in_array($option['name'][$lang], old($name))) {
                         $isSelected = true;
-                    } elseif (old($name) === null && in_array($option['id'], ($default == null ? [] : $default))) {
+                    } elseif (!old() && in_array($option['id'], ($default == null ? [] : $default))) {
                         $isSelected = true;
                     }
                 @endphp
