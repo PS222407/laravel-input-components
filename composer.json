@@ -1,0 +1,22 @@
+{
+    "name": "jensramakers/laravel-input-components",
+    "description": "laravel input components",
+    "autoload": {
+        "psr-4": {
+            "Jensramakers\\LaravelInputComponents\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jensramakers\\LaravelInputComponents\\LaravelInputComponentsServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "jensramakers"
+        }
+    ],
+    "require": {}
+}
