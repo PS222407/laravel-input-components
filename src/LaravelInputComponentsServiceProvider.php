@@ -26,7 +26,7 @@ class LaravelInputComponentsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/resources/views/components', 'laravel-input-components');
 
         $this->publishes([
-            __DIR__.'/../lang' => $this->app->langPath('vendor/jensramakers'),
+            __DIR__.'/lang' => $this->app->langPath('vendor/jensramakers'),
         ]);
 
         Blade::component(InputText::class, 'input-text');
