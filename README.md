@@ -8,10 +8,14 @@ publish country translations
 ```bash
 php artisan vendor:publish --provider="Jensramakers\LaravelInputComponents\LaravelInputComponentsServiceProvider"
 ```
+PLACE ALL IMPORTS EN REQUIRES IN APP.JS AND OTHER CODE IN A DIFFERENT FILE
 
 to change colors if the input fields use the input_color variable in tailwind.config.js
 ```js
 module.exports = {
+    content: [
+        './vendor/jensramakers/**/*.blade.php',
+    ],
     theme: {
         extend: {
             colors: {
@@ -21,7 +25,7 @@ module.exports = {
     },
 };
 ```
-## instal jQuery
+## install jQuery
 ```bash
 npm i jquery
 ```
@@ -101,6 +105,7 @@ for phone input install npm package:
 npm i intl-tel-input
 ```
 and use this piece of javascript code
+PLACE THIS IN A STANDALONE SCRIPT FILE!
 ```js
 import intlTelInput from 'intl-tel-input';
 require('intl-tel-input/build/js/utils')
