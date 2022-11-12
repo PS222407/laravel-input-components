@@ -21,6 +21,14 @@ module.exports = {
     },
 };
 ```
+## instal jQuery
+```bash
+npm i jquery
+```
+```js
+window.$ = window.jQuery = require('jquery');
+```
+
 ## flowbite | help popover
 to use the help info popover install flowbite  
 https://flowbite.com/docs/getting-started/quickstart/
