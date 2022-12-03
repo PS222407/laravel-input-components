@@ -29,8 +29,14 @@ module.exports = {
 ```bash
 npm i jquery
 ```
+WEBPACK
 ```js
 window.$ = window.jQuery = require('jquery');
+```
+VITE
+```js
+import $ from 'jquery';
+window.$ = $;
 ```
 
 ## flowbite | help popover
