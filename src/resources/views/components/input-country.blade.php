@@ -5,7 +5,7 @@
         </div>
         <div data-popper-arrow></div>
     </div>
-    <p class="flex items-center gap-x-2 text-xs mb-1">
+    <p class="flex items-center gap-x-2 text-xs mb-1 dark:text-white">
         <span>{{ __('admin.more_info') }}</span>
         <button data-popover-target="popover-description-{{ $name }}" data-popover-placement="top" type="button">
             <i class="fa-solid fa-question-circle"></i>
@@ -21,3 +21,29 @@
         <input type="hidden" id="{{ $name }}_code" name="{{ $name }}_code">
     </div>
 </div>
+
+<span id="input_color" hidden style="display: none" class="bg-input_color"></span>
+<span id="background_color" hidden style="display: none" class="bg-background-dark"></span>
+<div class="setDarkStyleCountry"></div>
+<script defer>
+    function setSelectDarkModeCountry() {
+        let color1 = window.getComputedStyle(document.getElementById('background_color')).getPropertyValue('background-color');
+        let color = window.getComputedStyle(document.getElementById('input_color')).getPropertyValue('background-color');
+
+        document.querySelector('.setDarkStyleCountry').innerHTML = `
+        <style>
+            .country-input {
+                background-color: ${color1};
+                color: white;
+            }
+            .country-list {
+                background-color: ${color1} !important;
+                color: white;
+            }
+            .country-list .country.highlight{
+                background-color: ${color} !important;
+            }
+        </style>
+    `;
+    }
+</script>

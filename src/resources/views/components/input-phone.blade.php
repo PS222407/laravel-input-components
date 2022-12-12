@@ -5,7 +5,7 @@
         </div>
         <div data-popper-arrow></div>
     </div>
-    <p class="flex items-center gap-x-2 text-xs mb-1">
+    <p class="flex items-center gap-x-2 text-xs mb-1 dark:text-white">
         <span>{{ __('admin.more_info') }}</span>
         <button data-popover-target="popover-description-{{ $name }}" data-popover-placement="top" type="button">
             <i class="fa-solid fa-question-circle"></i>
@@ -17,8 +17,29 @@
         {{ $label }} @if($required) <span style="color: red">*</span> @endif
     </label>
     <input id="phone" type="{{ $type }}" name="{{ $name }}" value="{{ old($name) ?? $default }}" {{ $form ? 'form='.$form : '' }} {{ $attr }} class="{{ $class }} @error($name) grow w-full shadow appearance-none border-red-500 @enderror phone block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-input_color peer" style="{{ $style }}">
-    <input type="hidden" name="phone_number_region" id="phone_number_region" {{ $form ? 'form='.$form : '' }} />
-    <input type="hidden" id="defaultPhoneCountryRegion" value="{{ old('phone_number_region') ?? $defaultPhoneRegion }}" {{ $form ? 'form='.$form : '' }}>
+    <input type="hidden" name="phone_number_region" id="phone_number_region" />
+    <input type="hidden" id="defaultPhoneCountryRegion" value="{{ old('phone_number_region') ?? $defaultPhoneRegion }}">
     <span id="valid-msg" class="hidden text-lime-500">✓ Valid</span>
     <span id="error-msg" class="hidden text-red-500"></span>
 </div>
+
+<span id="background_color" hidden style="display: none" class="bg-background-dark"></span>
+<div class="setDarkStylePhone"></div>
+<script defer>
+    function setSelectDarkModePhone() {
+        let color1 = window.getComputedStyle(document.getElementById('background_color')).getPropertyValue('background-color');
+
+        document.querySelector('.setDarkStylePhone').innerHTML = `
+        <style>
+            .phone {
+                background-color: ${color1};
+                color: white !important;
+            }
+            .iti__country-list {
+                background-color: ${color1};
+                color: white !important;
+            }
+        </style>
+    `;
+    }
+</script>

@@ -25,6 +25,18 @@ module.exports = {
     },
 };
 ```
+## Darkmode support
+Add this code in your javascript after loading components like select2 for example
+```js
+if (document.documentElement.classList.contains('dark')) {
+    try {setSelectDarkMode()} catch ($e) {}
+    try {setSelectDarkModeCountry()} catch ($e) {}
+    try {setSelectDarkModePhone()} catch ($e) {}
+    try {setSelectDarkModeSelectArray()} catch ($e) {}
+    try {setSelectDarkModeSelectModel()} catch ($e) {}
+    try {setSelectDarkModeSelectMultiple()} catch ($e) {}
+}
+```
 ## install jQuery
 ```bash
 npm i jquery
